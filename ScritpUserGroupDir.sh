@@ -22,21 +22,28 @@ groupadd GRP_SEC;
 #criando usuarios
 echo "Adicionando usuarios, senha padrão Senha123"
 
-useradd carlos -m -s /bin/bash -c "Carlos" -p $(openssl passwd "Senha123") -G GRP_ADM;
-useradd maria -m --shell /bin/bash -c "Maria" -p $(openssl passwd "Senha123") -G GRP_ADM;
-useradd joao -m --shell /bin/bash -c "Joao" -p $(openssl passwd "Senha123") -G GRP_ADM;
-useradd debora -m --shell /bin/bash -c "Debora" -p $(openssl passwd "Senha123") -G GRP_VEN;
-useradd sebastiana -m --shell /bin/bash -c "Sebastiana" -p $(openssl passwd "Senha123") -G GRP_VEN;
-useradd roberto -m --shell /bin/bash -c "Roberto" -p $(openssl passwd "Senha123") -G GRP_VEN;
-useradd josefina -m --shell /bin/bash -c "josefina" -p $(openssl passwd "Senha123") -G GRP_SEC;
-useradd amanda -m --shell /bin/bash -c "amanda" -p $(openssl passwd "Senha123") -G GRP_SEC;
-useradd rogerio -m --shell /bin/bash -c "rogerio" -p $(openssl passwd "Senha123") -G GRP_SEC;
+#usuarios do GRP_ADM
+useradd carlos -m -s /bin/bash -c "Carlos" -p $(openssl passwd Senha123) -G GRP_ADM;
+useradd maria -m --shell /bin/bash -c "Maria" -p $(openssl passwd Senha123) -G GRP_ADM;
+useradd joao -m --shell /bin/bash -c "Joao" -p $(openssl passwd Senha123) -G GRP_ADM;
+
+#usuarios do grupo ven
+useradd debora -m --shell /bin/bash -c "Debora" -p $(openssl passwd Senha123) -G GRP_VEN;
+useradd sebastiana -m --shell /bin/bash -c "Sebastiana" -p $(openssl passwd Senha123) -G GRP_VEN;
+useradd roberto -m --shell /bin/bash -c "Roberto" -p $(openssl passwd Senha123) -G GRP_VEN;
+
+#usuarios do grupo sec
+useradd josefina -m --shell /bin/bash -c "josefina" -p $(openssl passwd Senha123) -G GRP_SEC;
+useradd amanda -m --shell /bin/bash -c "amanda" -p $(openssl passwd Senha123) -G GRP_SEC;
+useradd rogerio -m --shell /bin/bash -c "rogerio" -p $(openssl passwd Senha123) -G GRP_SEC;
+
 #alternado permissões das pastas.
 echo "Editando permissões"
 chmod -R 777 /publico;
 chmod -R 770 /adm;
 chmod -R 770 /ven;
 chmod -R 770 /sec;
+
 chown -R root:GRP_ADM /adm;
 chown -R root:GRP_VEN /ven;
 chown -R root:GRP_SEC /sec;
