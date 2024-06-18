@@ -26,7 +26,7 @@ rm /var/www/html/*
 cd /tmp;
 git clone https://github.com/denilsonbonatti/linux-site-dio.git;
 cd /tmp/linux-site-dio;
-cp -r * /var/www/html/;
+cp -R * /var/www/html/;
 
 
 echo "####################";
