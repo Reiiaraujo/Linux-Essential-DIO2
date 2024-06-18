@@ -39,3 +39,5 @@ systemctl restart apache2;
 echo "####################";
 echo "Script finalizando...";
 echo "####################";
+
+#"By: Reinaldo Araujo"
